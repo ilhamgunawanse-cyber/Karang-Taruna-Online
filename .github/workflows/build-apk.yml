@@ -26,7 +26,7 @@ jobs:
         run: |
           rm -rf project
           mkdir project
-          unzip -q Karang_Taruna_Online_v1_1_1_FIXED.zip -d project
+          unzip -q Karang_Taruna_Online_v1_1_2_BUILD_FIX.zip -d project
 
       - name: Generate Android project
         working-directory: project
