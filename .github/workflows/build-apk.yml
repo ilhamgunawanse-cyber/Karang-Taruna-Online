@@ -19,12 +19,20 @@ jobs:
         with:
           channel: stable
 
-      - name: Flutter version
+      - name: Check Flutter
         run: flutter --version
 
-      - name: Extract source ZIP
+      - name: Extract source
         run: |
+          rm -rf project
+          mkdir project
           unzip -q Karang_Taruna_Online_v1_1_Firebase_Source.zip -d project
+
+      - name: Generate Android project
+        working-directory: project
+        run: |
+          rm -rf android
+          flutter create . --platforms android --project-name karang_taruna_online
 
       - name: Install dependencies
         working-directory: project
